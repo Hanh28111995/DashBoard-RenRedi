@@ -1,6 +1,8 @@
 import React from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 import LayoutDashboard from "../LayoutDashboard/LayoutDashboard";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import"../Pages/Dashboard/Dashboard.scss"
 
 export default function Router() {
   const routing = useRoutes([
@@ -9,8 +11,8 @@ export default function Router() {
       element: <LayoutDashboard/>,
       children: [
         {
-          path: "/Dashboard",
-          element: <Navigate to="/" />,
+          path: "/dashboard",
+          element: <Dashboard/>,
         },
       ]
     },

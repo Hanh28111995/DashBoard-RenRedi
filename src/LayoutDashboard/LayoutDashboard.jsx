@@ -4,6 +4,8 @@ import Icon from "@mdi/react";
 import { mdiAccount, mdiAccountCash, mdiFileEdit, mdiClockTimeFour, mdiTicketAccount, mdiCalendarMonth, mdiAccountSupervisor, mdiAccountGroup } from "@mdi/js";
 import { Outlet } from 'react-router-dom';
 import HeaderContent from './HeaderContent';
+import './Layout.scss'
+import Chatbox from './Chatbox';
 const { Content, Sider } = Layout;
 
 
@@ -58,17 +60,17 @@ export default function LayoutDashboard() {
     ]
 
     return (
-        // <p className='text-light '>hanh</p>
-        <div className='layOut_wrapper'>
+        
+        <div className='layout_wrapper'>
             <Layout
                 style={{
                     minHeight: '100vh',
                 }}
             >
                 <Sider
-                    // className={`${userState.toggleDarkLight ? "menuSidebar_dark" : "menuSidebar"}`}
+                    className="menuSidebar"
                     theme='light'
-                    collapsed={false}
+                    collapsed={collapsed}
                     onCollapse={(value) => setCollapsed(value)}
                 // collapsible={true}
                 // onMouseEnter={() => setCollapsed(false)}
@@ -80,17 +82,18 @@ export default function LayoutDashboard() {
 
 
                 >
-                    <div className="collapse-btn bg-dark w-100 d-inline-flex align-items-center" style={{ padding: '15px' }} onClick={() => { setCollapsed(!collapsed) }}>
-                        <span className="navHeaderIconContainer text-light" id="HamburgerMenuIcon" >
-                            <i class="fa-solid fa-bars fa-xl"></i>
+                    <div className="collapse-btn bg-dark w-100 d-inline-flex align-items-center"  onClick={() => { setCollapsed(!collapsed) }}>
+                        <span className="navHeaderIconContainer text-light" id="MenuBarIcon" >
+                            <i className="fa-solid fa-bars fa-xl"></i>
                         </span>
-                        <div className='logo'>
+                        
+                        <div className={`logo ${collapsed? 'd-none':''}`}>
                             <span className="logo-container" >
                                 <img
-                                    style={{ height: '43.94px', width: '130px' }}
                                     src="https://app.rentredi.com/img/logoWhiteNoBackground.png" id="dashboardLogo" />
                             </span>
                         </div>
+                        
                     </div>
 
                     <Menu
@@ -121,9 +124,7 @@ export default function LayoutDashboard() {
                             <HeaderContent />
                         </header>
                         <Outlet />
-                        {/* <footer className='mt-3' >
-                            <FooterContent />
-                        </footer> */}
+                        <Chatbox/>
                     </Content>
 
                 </Layout>

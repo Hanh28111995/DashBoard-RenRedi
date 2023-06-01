@@ -1,0 +1,83 @@
+.layout_wrapper {
+    .ant-layout {
+        .ant-layout-sider {
+            transition: unset;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 100;
+
+            .collapse-btn {
+                padding: 5px;
+                height: 54px;
+            }
+
+            .logo {
+                .logo-container {
+                    padding-left: 20px;
+                    img {
+                        height: 43.94px;
+                        width: 130px;
+                    }
+                }
+            }
+        }
+
+        ul.ant-menu {
+            .ant-menu-submenu {
+                .ant-menu-submenu-title {
+                    transition: none;
+
+                    .ant-menu-item-icon {
+                        display: block;
+                        font-size: 16px !important;
+                        min-width: 16px !important;
+                        transition: none !important;
+                    }
+
+                    .ant-menu-title-content,
+                    .ant-menu-submenu-arrow {
+                        transition: none;
+                    }
+                }
+            }
+
+            .ant-menu-item {
+                transition: none;
+
+                .ant-menu-title-content {
+                    transition: none;
+                }
+
+                .ant-menu-item-icon {
+                    display: block;
+                    font-size: 16px !important;
+                    min-width: 16px !important;
+                    transition: none !important;
+                }
+            }
+        }
+
+        .ant-layout-sider-collapsed {
+            flex: 0 0 55px !important;
+            max-width: 55px !important;
+            min-width: 55px !important;
+            width: 55px !important;
+        }
+
+        .ant-menu-submenu-inline .ant-menu-submenu-title,
+        .ant-menu-item {
+            padding-left: 15px !important;
+        }
+
+        #MenuBarIcon {
+            padding-left: 13px !important;
+        }
+    }
+    .ant-layout .ant-layout-content{
+        margin-left: 55px !important;
+    }
+    // header{
+
+    // }
+}
