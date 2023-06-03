@@ -1,0 +1,49 @@
+.layout_wrapper {
+    .navbar {
+        z-index: 2;
+        ul {
+            li {
+                .nav-link i {
+                    color: $ft-color-1;
+                }
+            }
+
+            .user-select {
+                border: 1px solid gray;
+                border-radius: 50px;
+                padding: 3px 10px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                span {
+                    margin-right: 25px;
+                }
+            }
+
+            .user-list {
+                width: 100%;
+                position: absolute;
+                top: 101%;
+                left: 0;
+                z-index: 100;
+
+                ul {
+                    background-color: $bg-color-light;
+                    border: 1px solid gray;
+                    border-radius: 10px;
+                    padding-left: 0 !important;
+                    text-align: center;
+                    overflow: hidden;
+
+                    li {
+                        &:hover {
+                            background-color: $bg-color-6;
+                            color: $ft-color-light;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

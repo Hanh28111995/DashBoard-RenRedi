@@ -1,0 +1,516 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: rgb(248, 249, 251);
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0;
+}
+
+.layout_wrapper .ant-layout .ant-layout-sider {
+  -webkit-transition: unset;
+  transition: unset;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+.layout_wrapper .ant-layout .ant-layout-sider::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+.layout_wrapper .ant-layout .ant-layout-sider .collapse-btn {
+  padding: 5px;
+  height: 54px;
+}
+.layout_wrapper .ant-layout .ant-layout-sider .logo .logo-container {
+  padding-left: 20px;
+}
+.layout_wrapper .ant-layout .ant-layout-sider .logo .logo-container img {
+  height: 43.94px;
+  width: 130px;
+}
+.layout_wrapper .ant-layout #MenuBarIcon {
+  padding-left: 13px !important;
+}
+.layout_wrapper .ant-layout #MenuBarIcon i {
+  color: #3498db;
+}
+.layout_wrapper .ant-layout .expanded {
+  background-color: #3498db;
+}
+.layout_wrapper .ant-layout .expanded #MenuBarIcon {
+  padding-left: 13px !important;
+}
+.layout_wrapper .ant-layout .expanded #MenuBarIcon i {
+  color: #fff;
+}
+.layout_wrapper .ant-layout ul.ant-menu .ant-menu-submenu .ant-menu-submenu-title {
+  -webkit-transition: none;
+  transition: none;
+}
+.layout_wrapper .ant-layout ul.ant-menu .ant-menu-submenu .ant-menu-submenu-title .ant-menu-item-icon {
+  display: block;
+  font-size: 16px !important;
+  min-width: 16px !important;
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+.layout_wrapper .ant-layout ul.ant-menu .ant-menu-submenu .ant-menu-submenu-title .ant-menu-title-content,
+.layout_wrapper .ant-layout ul.ant-menu .ant-menu-submenu .ant-menu-submenu-title .ant-menu-submenu-arrow {
+  -webkit-transition: none;
+  transition: none;
+}
+.layout_wrapper .ant-layout ul.ant-menu .ant-menu-item {
+  -webkit-transition: none;
+  transition: none;
+}
+.layout_wrapper .ant-layout ul.ant-menu .ant-menu-item .ant-menu-title-content {
+  -webkit-transition: none;
+  transition: none;
+}
+.layout_wrapper .ant-layout ul.ant-menu .ant-menu-item .ant-menu-item-icon {
+  display: block;
+  font-size: 16px !important;
+  min-width: 16px !important;
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+.layout_wrapper .ant-layout .ant-layout-sider-collapsed {
+  -webkit-box-flex: 0 !important;
+      -ms-flex: 0 0 55px !important;
+          flex: 0 0 55px !important;
+  max-width: 55px !important;
+  min-width: 55px !important;
+  width: 55px !important;
+}
+.layout_wrapper .ant-layout .ant-menu-submenu-inline .ant-menu-submenu-title,
+.layout_wrapper .ant-layout .ant-menu-item {
+  padding-left: 15px !important;
+}
+.layout_wrapper .ant-layout .ant-layout-content {
+  margin-left: 55px !important;
+  margin-right: 0 !important;
+}
+
+.layout_wrapper .navbar {
+  z-index: 2;
+}
+.layout_wrapper .navbar ul li .nav-link i {
+  color: #3498db;
+}
+.layout_wrapper .navbar ul .user-select {
+  border: 1px solid gray;
+  border-radius: 50px;
+  padding: 3px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.layout_wrapper .navbar ul .user-select span {
+  margin-right: 25px;
+}
+.layout_wrapper .navbar ul .user-list {
+  width: 100%;
+  position: absolute;
+  top: 101%;
+  left: 0;
+  z-index: 100;
+}
+.layout_wrapper .navbar ul .user-list ul {
+  background-color: #fff;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding-left: 0 !important;
+  text-align: center;
+  overflow: hidden;
+}
+.layout_wrapper .navbar ul .user-list ul li:hover {
+  background-color: #3274ba;
+  color: #fff;
+}
+
+.dashboard .dashboard-background {
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+.dashboard .dashboard-background .dashboard-background-title {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.dashboard .dashboard-background .dashboard-background-title p {
+  color: #fff;
+}
+.dashboard .dashboard-background .dashboard-background-title p:first-child {
+  font-size: 32px;
+}
+.dashboard .dashboard-background .dashboard-background-title p:last-child {
+  font-size: 18px;
+}
+.dashboard .shortBlueBackgroundContainer {
+  position: relative;
+  width: 100%;
+  height: 205px;
+  margin-top: -20px;
+}
+.dashboard .shortBlueBackgroundContainer .shortBlueBackground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden !important;
+}
+.dashboard .shortBlueBackgroundContainer .useAsMask {
+  -webkit-clip-path: inset(0);
+          clip-path: inset(0);
+  overflow-x: hidden;
+  background-color: #0065aa;
+}
+.dashboard .shortBlueBackgroundContainer .shape-container {
+  width: 100%;
+  height: 780px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.dashboard .shortBlueBackgroundContainer .shape-container .shape-first {
+  position: absolute;
+  width: 49.37%;
+  height: 338.66%;
+  top: -129.4%;
+  background: rgba(41, 138, 204, 0.8);
+  border-radius: 40px;
+  -webkit-transform: matrix(0.71, 0.61, -0.82, 0.71, 0, 0);
+          transform: matrix(0.71, 0.61, -0.82, 0.71, 0, 0);
+}
+.dashboard .shortBlueBackgroundContainer .shape-container .shape-second {
+  position: absolute;
+  width: 30.5%;
+  height: 202.6%;
+  border-radius: 40px;
+  -webkit-transform: matrix(0.71, 0.61, -0.82, 0.71, 0, 0);
+          transform: matrix(0.71, 0.61, -0.82, 0.71, 0, 0);
+  left: 57.01%;
+  top: 46.82%;
+  background: rgba(41, 138, 204, 0.5);
+}
+.dashboard .shortBlueBackgroundContainer .shape-container .shape-third {
+  left: 70.4%;
+  top: 23.9%;
+  background: rgba(41, 138, 204, 0.8);
+  position: absolute;
+  width: 30.5%;
+  height: 202.6%;
+  border-radius: 40px;
+  -webkit-transform: matrix(0.71, 0.61, -0.82, 0.71, 0, 0);
+          transform: matrix(0.71, 0.61, -0.82, 0.71, 0, 0);
+}
+.dashboard .dashboard-task .dashboard-task-1,
+.dashboard .dashboard-task .dashboard-task-2,
+.dashboard .dashboard-task .dashboard-task-3,
+.dashboard .dashboard-task .dashboard-task-4,
+.dashboard .dashboard-task .dashboard-task-5,
+.dashboard .dashboard-task .dashboard-task-6 {
+  padding: 10px;
+}
+.dashboard .dashboard-task .dashboard-task-1 .dashboard-task-content,
+.dashboard .dashboard-task .dashboard-task-2 .dashboard-task-content,
+.dashboard .dashboard-task .dashboard-task-3 .dashboard-task-content,
+.dashboard .dashboard-task .dashboard-task-4 .dashboard-task-content,
+.dashboard .dashboard-task .dashboard-task-5 .dashboard-task-content,
+.dashboard .dashboard-task .dashboard-task-6 .dashboard-task-content {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  height: 100%;
+}
+
+.btnMultiFunc {
+  background-color: #fff;
+  width: 100%;
+  border-radius: 28px;
+  padding: 10px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.btnMultiFunc .title_func {
+  font-size: 20px;
+  color: #1A202C;
+}
+.btnMultiFunc .btn_func {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 5px;
+     -moz-column-gap: 5px;
+          column-gap: 5px;
+}
+.btnMultiFunc .btn_func button {
+  border-radius: 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.btnMultiFunc .btn_func button span {
+  margin-left: 5px;
+}
+.btnMultiFunc .btn_func .collapse-content {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  background-color: #fff;
+  border-radius: 10px;
+}
+.btnMultiFunc .btn_func .collapse-content ul {
+  padding-left: 0;
+  margin-bottom: 0;
+  padding: 5px 0;
+}
+.btnMultiFunc .btn_func .collapse-content ul li {
+  padding: 0 10px;
+}
+.btnMultiFunc .btn_func .collapse-content ul li:hover {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.renter_content {
+  padding: 10px;
+}
+.renter_content .nav-item .nav-link {
+  background-color: #aaa;
+  text-decoration: none;
+  color: #fff;
+  padding: 5px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.renter_content .nav-item .nav-link p {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.renter_content .nav-item .nav-link p:first-child {
+  font-size: 22px;
+}
+.renter_content .nav-item .nav-link p:last-child {
+  font-size: 15px;
+}
+.renter_content .nav-item .nav-link:hover {
+  -webkit-box-shadow: 0 5px 15px rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
+          box-shadow: 0 5px 15px rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
+}
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}

@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 import LayoutDashboard from "../LayoutDashboard/LayoutDashboard";
 import Dashboard from "../Pages/Dashboard/Dashboard";
-import"../Pages/Dashboard/Dashboard.scss"
+import Renter from "../Pages/Renter/Renter";
 
 export default function Router() {
   const routing = useRoutes([
@@ -13,6 +13,10 @@ export default function Router() {
         {
           path: "/dashboard",
           element: <Dashboard/>,
+        },
+        {
+          path: "/renters",
+          element: <Renter/>,
         },
       ]
     },

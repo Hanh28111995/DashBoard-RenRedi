@@ -6,7 +6,6 @@ import {
     PlusOutlined,
     DownOutlined
 } from '@ant-design/icons';
-import './btnMultiFunc.scss'
 
 export default function BtnMultiFunc(props) {
     return (
@@ -14,7 +13,7 @@ export default function BtnMultiFunc(props) {
             <div className='title_func'>
                 {props.name}
             </div>
-            <div>
+            <div className='btn_func'>
                 <Button>
                     <div className='btn-content' style={{ display: 'flex', alignItems: 'center' }}>
                         <span>Add</span>
@@ -22,13 +21,13 @@ export default function BtnMultiFunc(props) {
                     </div>
                 </Button>
                 <div style={{ position: 'relative', display: "flex", marginRight: '5px' }}>
-                    <div className='btn-expand' data-bs-toggle="collapse" data-bs-target={'#' + `${props.name}` + 'Content'}>
+                    <div className='btn-expand' data-bs-toggle="collapse" data-bs-target={'#' + `${props.name}`}>
                         <Button>
                             <i className="fas fa-chevron-down" aria-hidden="true"></i>
                         </Button>
                     </div>
-                    <div id={`${props.name}` + 'Content'}
-                        className='collapse'
+                    <div id={`${props.name}`}
+                        className='collapse collapse-content'
                     // className={`${userState.toggleDarkLight ? "menu_notificate_dark" : "menu_notificate"} collapse`}
                     >
                         {

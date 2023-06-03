@@ -1,0 +1,109 @@
+.dashboard {
+    .dashboard-background {
+        position: absolute;
+        top: 50px;
+        right: 0;
+
+        .dashboard-background-title {
+            align-items: center;
+
+            p {
+                color: $ft-color-light;
+
+                &:first-child {
+                    font-size: 32px;
+                    // font-weight: bold;
+                }
+
+                &:last-child {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    .shortBlueBackgroundContainer {
+        position: relative;
+        width: 100%;
+        height: 205px;
+        margin-top: -20px;
+
+        .shortBlueBackground {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            overflow-y: hidden !important;
+        }
+
+        .useAsMask {
+            clip-path: inset(0);
+            overflow-x: hidden;
+            background-color: $bg-color-7;
+            // .lightBlue {
+            //     background: $bg-color-2;
+            // }
+        }
+
+        .shape-container {
+            width: 100%;
+            height: 780px;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            .shape-first {
+                position: absolute;
+                width: 49.37%;
+                height: 338.66%;
+                top: -129.4%;
+                background: rgba(41, 138, 204, .8);
+                border-radius: 40px;
+                transform: matrix(.71, .61, -.82, .71, 0, 0);
+            }
+
+            .shape-second {
+                position: absolute;
+                width: 30.5%;
+                height: 202.6%;
+                border-radius: 40px;
+                transform: matrix(.71, .61, -.82, .71, 0, 0);
+                left: 57.01%;
+                top: 46.82%;
+                background: rgba(41, 138, 204, .5)
+            }
+
+            .shape-third {
+                left: 70.4%;
+                top: 23.9%;
+                background: rgba(41, 138, 204, .8);
+                position: absolute;
+                width: 30.5%;
+                height: 202.6%;
+                border-radius: 40px;
+                transform: matrix(.71, .61, -.82, .71, 0, 0);
+            }
+
+
+        }
+
+    }
+
+    .dashboard-task {
+
+        .dashboard-task-1,
+        .dashboard-task-2,
+        .dashboard-task-3,
+        .dashboard-task-4,
+        .dashboard-task-5,
+        .dashboard-task-6 {
+            padding: 10px;
+
+            .dashboard-task-content {
+                background-color: $bg-color-light;
+                border-radius: 20px;
+                padding: 20px;
+                height: 100%;
+
+            }
+        }
+    }
+}

@@ -4,7 +4,6 @@ import Icon from "@mdi/react";
 import { mdiAccount, mdiAccountCash, mdiFileEdit, mdiClockTimeFour, mdiTicketAccount, mdiCalendarMonth, mdiAccountSupervisor, mdiAccountGroup } from "@mdi/js";
 import { Outlet } from 'react-router-dom';
 import HeaderContent from './HeaderContent';
-import './Layout.scss'
 import Chatbox from './Chatbox';
 const { Content, Sider } = Layout;
 
@@ -53,6 +52,16 @@ export default function LayoutDashboard() {
                 getItem('Manage Plan', '/tomorrow4/child2'),
                 getItem('Re-Sync Data', '/tomorrow4/child3'),
             ]),
+        // getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
+        // getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
+        // getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
+        // getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
+        // getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
+        // getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
+        // getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
+        // getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
+        // getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
+
 
 
         // getItem('DEPARTMENT___', null, <span>___</span>, null, null, true),
@@ -60,7 +69,7 @@ export default function LayoutDashboard() {
     ]
 
     return (
-        
+
         <div className='layout_wrapper'>
             <Layout
                 style={{
@@ -72,28 +81,32 @@ export default function LayoutDashboard() {
                     theme='light'
                     collapsed={collapsed}
                     onCollapse={(value) => setCollapsed(value)}
-                // collapsible={true}
-                // onMouseEnter={() => setCollapsed(false)}
-                // onMouseLeave={() => setCollapsed(true)}
-                // style={{
-                //     height: '100%',
-                //     overflowY: 'auto',
-                // }}
+                    // collapsible={true}
+                    // onMouseEnter={() => setCollapsed(false)}
+                    // onMouseLeave={() => setCollapsed(true)}
+                    style={{
+                        height: '100%',
+                        overflowY: 'auto',
+                        backgroundClip: 'red'
+                    }}
 
 
                 >
-                    <div className="collapse-btn bg-dark w-100 d-inline-flex align-items-center"  onClick={() => { setCollapsed(!collapsed) }}>
+                    <div
+                        className={`collapse-btn w-100 d-inline-flex align-items-center ${collapsed ? '' : 'expanded'}`}
+                        onClick={() => { setCollapsed(!collapsed) }}
+                    >
                         <span className="navHeaderIconContainer text-light" id="MenuBarIcon" >
                             <i className="fa-solid fa-bars fa-xl"></i>
                         </span>
-                        
-                        <div className={`logo ${collapsed? 'd-none':''}`}>
+
+                        <div className={`logo ${collapsed ? 'd-none' : ''}`}>
                             <span className="logo-container" >
                                 <img
                                     src="https://app.rentredi.com/img/logoWhiteNoBackground.png" id="dashboardLogo" />
                             </span>
                         </div>
-                        
+
                     </div>
 
                     <Menu
@@ -120,11 +133,9 @@ export default function LayoutDashboard() {
                             margin: '0 0.5rem',
                         }}
                     >
-                        <header >
-                            <HeaderContent />
-                        </header>
+                        <HeaderContent />
                         <Outlet />
-                        <Chatbox/>
+                        <Chatbox />
                     </Content>
 
                 </Layout>

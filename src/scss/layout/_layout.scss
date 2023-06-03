@@ -7,14 +7,21 @@
             top: 0;
             z-index: 100;
 
+            &::-webkit-scrollbar {
+                width: 0;
+                background: transparent;
+            }
+
             .collapse-btn {
                 padding: 5px;
                 height: 54px;
+
             }
 
             .logo {
                 .logo-container {
                     padding-left: 20px;
+
                     img {
                         height: 43.94px;
                         width: 130px;
@@ -22,6 +29,27 @@
                 }
             }
         }
+
+        #MenuBarIcon {
+            padding-left: 13px !important;
+
+            i {
+                color: $ft-color-1;
+            }
+        }
+
+        .expanded {
+            background-color: $bg-color-1;
+
+            #MenuBarIcon {
+                padding-left: 13px !important;
+                i{
+                    color: $ft-color-light;
+                }
+                
+            }
+        }
+
 
         ul.ant-menu {
             .ant-menu-submenu {
@@ -69,15 +97,10 @@
         .ant-menu-item {
             padding-left: 15px !important;
         }
-
-        #MenuBarIcon {
-            padding-left: 13px !important;
-        }
     }
-    .ant-layout .ant-layout-content{
+
+    .ant-layout .ant-layout-content {
         margin-left: 55px !important;
+        margin-right: 0 !important;
     }
-    // header{
-
-    // }
 }

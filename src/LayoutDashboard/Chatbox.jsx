@@ -1,5 +1,4 @@
 import React from 'react'
-import './chatbox.scss'
 
 export default function Chatbox() {
   const openForm = () => {
