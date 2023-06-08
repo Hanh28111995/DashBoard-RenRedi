@@ -1,0 +1,45 @@
+.dataTable {
+    .headerStyle {
+        display: flex;
+        align-items: center;
+
+        span {
+            font-size: 16px;
+            font-weight: 500;
+            color: $ft-color-text-b;
+        }
+
+        button {
+            border: none;
+            border-radius: 10px;
+            background-color: transparent;
+            padding: 0px 5px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                background-color: rgba($color: $bg-color-gray, $alpha: 0.2);
+            }
+        }
+    }
+
+    .search-btn {
+        height: 39px;
+        margin-right: 8px;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        color: $ft-color-text-b;
+        padding: 8px 24px 10px;
+        font-size: .875rem;
+        font-weight: 600;
+        cursor: pointer;
+        background: #fff;
+        box-shadow: 0 1px 4px rgba(188, 196, 205, .5);
+        border-radius: 5px;
+        transition: .3s;
+    }
+}

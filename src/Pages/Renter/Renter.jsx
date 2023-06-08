@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from 'antd'
 import DataTableCurrent from '../../Component/Renders/DataTableCurent'
+import DataTableMovingIn from '../../Component/Renders/DataTableMovingIn'
 export default function Renter() {
     return (
         <div className='renter_content'>
@@ -8,7 +9,7 @@ export default function Renter() {
                 <ul className="nav nav-pills text-center row w-100" style={{ margin: '10px auto', padding: '5px 5px' }}>
                     <li className="nav-item col-4 col-md-2 col-lg-2" >
                         <a className='nav-link active' data-toggle="pill" href='#current' role="tab" aria-controls="pills-flamingo" aria-selected="true">
- {/* <a class="nav-link active" data-toggle="pill" href="#flamingo" role="tab" aria-controls="pills-flamingo" aria-selected="true"> */}
+                            {/* <a class="nav-link active" data-toggle="pill" href="#flamingo" role="tab" aria-controls="pills-flamingo" aria-selected="true"> */}
                             <p>Current</p>
                             <p>4 Tenants</p>
                         </a>
@@ -47,7 +48,12 @@ export default function Renter() {
                 </ul>
             </div>
             <div className='tab-content'>
-                <DataTableCurrent />
+                <div id='current' className="tab-pane active"  >
+                    <DataTableCurrent />
+                </div>
+                <div id='movingin' className="tab-pane">
+                    <DataTableMovingIn />
+                </div>
             </div>
         </div>
     )

@@ -4,12 +4,19 @@
     border-radius: 28px;
     padding: 10px 15px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
 
     .title_func {
         font-size: 20px;
         color: $ft-color-text;
+        cursor: pointer;
+
+        a {
+            color: $ft-color-text;
+            text-decoration: none;
+        }
     }
 
     .btn_func {
@@ -59,29 +66,61 @@
 .renter_content {
     padding: 10px;
 
-        .nav-item .nav-link {
-            background-color: $bg-color-gray;
-            text-decoration: none;
-            color: $ft-color-light;
-            padding: 5px;
-            transition: all .4s ease-in-out;
+    .nav-item .nav-link {
+        background-color: $bg-color-gray;
+        text-decoration: none;
+        color: $ft-color-light;
+        padding: 5px;
+        transition: all .4s ease-in-out;
 
-            p {
-                margin-bottom: 0;
-                font-weight: bold;
+        p {
+            margin-bottom: 0;
+            font-weight: bold;
 
-                &:first-child {
-                    font-size: 22px;
-                }
-
-                &:last-child {
-                    font-size: 15px;
-                }
+            &:first-child {
+                font-size: 22px;
             }
 
-            &:hover {
-                box-shadow: 0 5px 15px rgba(60, 64, 67, .302), 0 1px 3px 1px rgba(60, 64, 67, .149);
+            &:last-child {
+                font-size: 15px;
             }
         }
+
+        &:hover {
+            box-shadow: 0 5px 15px rgba(60, 64, 67, .302), 0 1px 3px 1px rgba(60, 64, 67, .149);
+        }
+    }
+
     // }
+}
+
+// .ant-btn {}
+
+.add-btn {
+    height: 50px;
+    min-width: 150px;
+    margin-right: 10px;
+    background-color: $bg-color-3 !important;
+    border: none !important;
+    color: $ft-color-light !important;
+    box-shadow: 0 1px 2px rgba(60, 64, 67, .302), 0 1px 3px 1px rgba(60, 64, 67, .149);
+    transition: all .2s ease-in-out;
+}
+
+.cancel-btn {
+    height: 50px;
+    min-width: 150px;
+    color: $ft-color-light;
+    border: none !important;
+    color: $ft-color-dark !important;
+    box-shadow: 0 1px 2px rgba(60, 64, 67, .302), 0 1px 3px 1px rgba(60, 64, 67, .149);
+    transition: all .2s ease-in-out;
+}
+
+.cancel-btn,
+.add-btn {
+    &:hover {
+        box-shadow: 0 5px 15px rgba(60, 64, 67, .302), 0 1px 3px 1px rgba(60, 64, 67, .149);
+        opacity: 1;
+    }
 }

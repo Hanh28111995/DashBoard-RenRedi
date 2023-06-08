@@ -8,10 +8,13 @@ import {
 } from '@ant-design/icons';
 
 export default function BtnMultiFunc(props) {
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
     return (
         <div className='btnMultiFunc'>
             <div className='title_func'>
-                {props.name}
+                <a href={'/' + props.name}>{capitalizeFirstLetter(props.name)}</a>
             </div>
             <div className='btn_func'>
                 <Button>

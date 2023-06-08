@@ -1,0 +1,25 @@
+.AddEventCalendar {
+    width: 80%;
+
+    .AddEventCalendar-content {
+        padding: 70px 20px 50px 20px;
+        box-shadow: 0 0 50px 5px rgba(50, 116, 186, .2);
+        border-radius: 5px;
+        background-color: $bg-color-light;
+
+        .ant-form .form-btn {
+            display: flex;
+            justify-content: center;
+        }
+
+        .ant-form-item {
+            .ant-form-item-row {
+                justify-content: center;
+
+                .ant-form-item-label {
+                    text-align: start !important;
+                }
+            }
+        }
+    }
+}

@@ -3,9 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background: rgb(248, 249, 251);
 }
+
 @import "./base/reset";
 @import "./helper/variable";
 @import "./layout/layout";
@@ -13,3 +15,6 @@ body{
 @import "./page/dashboard";
 @import "./components/button";
 @import "./components/chatbox";
+@import "./components/dataTable";
+@import "./components/calendar";
+@import "./page/addEventCalendar";

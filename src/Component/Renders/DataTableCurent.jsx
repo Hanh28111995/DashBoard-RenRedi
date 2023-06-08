@@ -3,23 +3,17 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory,
 {
   PaginationProvider,
-  SizePerPageDropdownStandalone,
   PaginationTotalStandalone,
   PaginationListStandalone,
 } from 'react-bootstrap-table2-paginator';
 import iconFilter from '../../assets/img/greyFilterIcon.addaac64.svg'
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit';
-import Icon from '@mdi/react';
-import {
-  mdiCheckCircleOutline,
-  mdiCloseCircleOutline,
-  mdiDotsHorizontalCircleOutline,
-  mdiDotsVertical
-} from '@mdi/js';
-import { Space, Button } from 'antd';
+import { Space, Button, Modal } from 'antd';
 
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import ModalFilter from './ModalFilter';
+import { Footer } from 'antd/es/layout/layout';
 // import { setTitleHeader } from '../../../store/actions/user.action';
 
 
@@ -29,29 +23,50 @@ const { SearchBar } = Search;
 var $ = require("jquery");
 
 
-export default function DataTableCurrent(props) {
-  const [MissPunchList, setMissPunchList] = useState([])
+export default function DataTableCurrent() {
+  const [rentersList, setRentersList] = useState([])
+  const [modalName, setModalName] = useState('')
+  const [isModalOpen, setIsModalOpen] = useState(false);
   // const dispatch = useDispatch();
   // const userState = useSelector((state) => state.userReducer)
 
+  const showModal = () => {
+    setIsModalOpen(true);
+
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   //demo data from api
-  const data = [];
+  const data = [
+    {
+      renter: "Barone Ed",
+      address: "1 BiggerPockets Drive",
+      unit: 'main',
+      rentPrice: '$750.00',
+      leaseStart: '11/30/2020',
+      leaseEnd: '12/30/2020',
+      connectStatus: true,
+      insuranceStatus: false,
+      autoPayStatus: false
+    },
+  ];
 
 
   // useEffect(() => {
   //   dispatch(setTitleHeader(props.title))
   // }, [userState.titleHeader])
 
-  useEffect(() => {
-    if (data.length != 0) {
-      setMissPunchList(data)
-    }
-  }, [data])
+  // useEffect(() => {
+  //   if (data.length != 0) {
+  //     setRentersList(data)
+  //   }
+  // }, [data])
 
-  const blurEvent = (x) => {
-    console.log('blur', x)
-    $(".collapse").collapse('hide');
-  }
 
 
   //setting dataTable
@@ -77,62 +92,80 @@ export default function DataTableCurrent(props) {
   ///// function component for sort next/prev pagination
   const sortIconFormatter = (name) => {
     return (
-      <div>
+      <div className='headerStyle'>
         <span>{name}</span>
-        <a href="">
+        <Button
+          onClick={() => {
+            showModal();
+            setModalName(name);
+          }}
+        >
           <img src={iconFilter} title='Filter & Sort' />
-        </a>
+        </Button>
       </div>
     );
   }
 
   const columns = [{
     dataField: 'renter',
-    headerClasses: 'headerTableStyle',
     text: 'Renter',
     sort: true,
     headerFormatter: () => sortIconFormatter('Renter'),
-
-
   }, {
     dataField: 'address',
-    headerClasses: 'headerTableStyle',
     text: 'Address',
     sort: true,
-
-
+    headerFormatter: () => sortIconFormatter('Address'),
   }, {
     dataField: 'unit',
-    headerClasses: 'headerTableStyle',
     text: 'Unit',
     sort: true,
-
-
+    headerFormatter: () => sortIconFormatter('Unit'),
   },
   {
     dataField: 'rentPrice',
-    headerClasses: 'headerTableStyle',
     text: 'Rent',
     sort: true,
-
+    headerFormatter: () => sortIconFormatter('Rent'),
   }, {
     dataField: 'leaseStart',
-    headerClasses: 'headerTableStyle',
     text: 'Lease Start',
     sort: true,
-
+    headerFormatter: () => sortIconFormatter('Lease Start'),
   }, {
     dataField: 'leaseEnd',
-    headerClasses: 'headerTableStyle',
     text: 'Lease End',
     sort: true,
+    headerFormatter: () => sortIconFormatter('Lease End'),
+  }, {
+    dataField: 'status',
+    text: '',
+    formatter: (cell, row) => {
+      return (
+        // <div>{`${row.connectStatus} ${row.insuranceStatus} ${row.autoPayStatus}`}</div>
+        <div className="tableDataDiv ">
+          <span>
+            <span style={{ fontSize: 20, marginRight: 15, cursor: 'default' }} aria-describedby="mui-61861">
+              <i className="fas fa-mobile-alt " aria-hidden="true" />
+            </span>
+            <span style={{ fontSize: 20, marginRight: 15, cursor: 'pointer' }} title="Not Insured - Click To Notify or Update">
+              <i className="fas fa-shield-alt " aria-hidden="true" />
+            </span>
+            <span style={{ fontSize: 20, marginRight: 15, cursor: 'pointer' }} title="Auto-pay: Inactive - Click To Notify">
+              <i className="fas fa-dollar-sign " aria-hidden="true" />
+            </span>
+          </span>
+        </div>
+
+      )
+    }
   },
   ];
 
 
   return (
     <>
-      <div id='current' className="tab-pane active"  >
+      <div className='dataTable'>
         <PaginationProvider pagination={paginationFactory(options)}>
           {
             ({
@@ -143,25 +176,25 @@ export default function DataTableCurrent(props) {
 
                 <ToolkitProvider
                   keyField="renter"
-                  data={MissPunchList}
+                  data={data}
                   columns={columns}
                   search
                 >
                   {
                     toolkitprops => (
-                      <Space direction='vertical d-dlex w-100 search-btn-zone'>
+                      <Space direction='vertical d-dlex w-100'>
                         <Space direction='horizontal' className='justify-content-between d-flex w-100 search-btn-zone-child'>
                           <div>
                             <h4>Current</h4>
                           </div>
                           <div>
-                            <Button>
+                            <Button className='search-btn'>
                               <i className="fas fa-coins mr-2" aria-hidden="true"></i> Show Balance Due
                             </Button>
-                            <Button>
+                            <Button className='search-btn'>
                               <i className="far fa-save mr-2" aria-hidden="true"></i>Export Data
                             </Button>
-                            <Button>
+                            <Button className='search-btn'>
                               <i className="fa fa-ban mr-2" aria-hidden="true"></i>Clear All Filters
                             </Button>
                           </div>
@@ -180,7 +213,7 @@ export default function DataTableCurrent(props) {
                           {...paginationTableProps}
                         />
                         {
-                          (MissPunchList.length === 0) &&
+                          (data.length === 0) &&
                           <Space direction='vertical' className='d-dlex text-center w-100' >
                             <p className='pt-3'>No data available in table</p>
                             <hr />
@@ -194,7 +227,7 @@ export default function DataTableCurrent(props) {
                   <PaginationTotalStandalone
                     {...paginationProps}
                   />
-                  {(MissPunchList.length === 0) ?
+                  {(data.length === 0) ?
                     <Space>
                       <ul className="pagination react-bootstrap-table-page-btns-ul">
                         <li className="disabled page-item" title="previous page"><a href="#" className="page-link">&lt;</a></li>
@@ -212,86 +245,9 @@ export default function DataTableCurrent(props) {
           }
         </PaginationProvider>
       </div>
-      {/* <div id='movingin' className="tab-pane">
-        <PaginationProvider pagination={paginationFactory(options)}>
-          {
-            ({
-              paginationProps,
-              paginationTableProps
-            }) => (
-              <>
-
-                <ToolkitProvider
-                  keyField="reference"
-                  data={MissPunchList}
-                  columns={columns}
-                  search
-                >
-                  {
-                    toolkitprops => (
-                      <Space direction='vertical d-dlex w-100 search-btn-zone'>
-                        <Space direction='horizontal' className='justify-content-between d-flex w-100 search-btn-zone-child'>
-                          <Space>
-                            <span>Show</span>
-                            <SizePerPageDropdownStandalone {...paginationProps} />
-                            <span>entries</span>
-                          </Space>
-                          <Space className='d-flex align-items-start'>
-                            <SearchBar {...toolkitprops.searchProps} />
-                            <NavLink to='/admin/ticket/miss-punch/addnew'>
-                              <Button className='create_new_btn '>
-                                Create
-                              </Button>
-                            </NavLink>
-                          </Space>
-                        </Space>
-
-                        <hr />
-                        <BootstrapTable
-                          bootstrap4
-                          wrapperClasses='table-responsive'
-                          striped
-                          keyField='reference'
-                          data={MissPunchList}
-                          columns={columns}
-                          bordered={false}
-                          {...toolkitprops.baseProps}
-                          {...paginationTableProps}
-                        />
-                        {
-                          (MissPunchList.length === 0) &&
-                          <Space direction='vertical' className='d-dlex text-center w-100' >
-                            <p className='pt-3'>No data available in table</p>
-                            <hr />
-                          </Space>
-                        }
-                      </Space>
-                    )
-                  }
-                </ToolkitProvider>
-                <Space direction='horizontal' align='baseline' className='justify-content-between d-flex'>
-                  <PaginationTotalStandalone
-                    {...paginationProps}
-                  />
-                  {(MissPunchList.length === 0) ?
-                    <Space>
-                      <ul className="pagination react-bootstrap-table-page-btns-ul">
-                        <li className="disabled page-item" title="previous page"><a href="#" className="page-link">&lt;</a></li>
-                        <li className="disabled page-item" title="next page"><a href="#" className="page-link">&gt;</a></li>
-                      </ul>
-                    </Space>
-
-                    : <PaginationListStandalone
-                      {...paginationProps}
-                    />
-                  }
-                </Space>
-              </>
-            )
-          }
-        </PaginationProvider>
-      </div> */}
-
+      <Modal open={isModalOpen} onCancel={handleCancel} footer={null}>
+        <ModalFilter actionOut={() => handleCancel()} name={modalName} />
+      </Modal>
     </>
   )
 }

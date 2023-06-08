@@ -12,7 +12,7 @@ export default function HeaderContent() {
     return (
         <nav className="navbar navbar-expand-sm bg-light navbar-light w-100">
             <div className='logo'>
-                <a href="#">
+                <a href="/dashboard">
                     <img
                         style={{ height: '43.94px', width: '130px' }}
                         className='img-fluid'

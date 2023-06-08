@@ -7,43 +7,49 @@ import {
 import {
     PlusOutlined,
 } from '@ant-design/icons';
+import Calendar from '../Calendar/Calendar';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Dashboard() {
+    const navigate = useNavigate();
     return (
         <div className='dashboard'>
-            <div class="shortBlueBackgroundContainer">
-                <div class="shortBlueBackground useAsMask lightBlue">
-                    <div class="shape-container">
-                        <div class="shape-first"></div>
-                        <div class="shape-second"></div>
-                        <div class="shape-third"></div>
-                    </div>
-                    <div className='row col-12 dashboard-background'>
-                        <div className='col-md-4 dashboard-background-title'>
-                            <p>Good Evening, Thomas. </p>
-                            <p>Welcome to RentRedi!</p>
+            <div className='dashboard-bg'>
+                <div className="shortBlueBackgroundContainer">
+                    <div className="shortBlueBackground useAsMask lightBlue">
+                        <div className="shape-container">
+                            <div className="shape-first"></div>
+                            <div className="shape-second"></div>
+                            <div className="shape-third"></div>
                         </div>
-                        <div className='col-md-8'>
-                            <div className='row col-12'>
-                                <div className='col-md-4'>
-                                    <BtnMultiFunc name={'Renters'} />
-                                </div>
-                                <div className='col-md-4'>
-                                    <BtnMultiFunc name={'Notifications'} />
-                                </div>
-                                <div className='col-md-4'>
-                                    <BtnMultiFunc name={'Properties'} />
-                                </div>
+                    </div>
+                </div>
+
+                <div className='row col-12 dashboard-background'>
+                    <div className='col-xl-4 dashboard-background-title'>
+                        <p>Good Evening, Thomas. </p>
+                        <p>Welcome to RentRedi!</p>
+                    </div>
+                    <div className='col-xl-8'>
+                        <div className='row col-12'>
+                            <div className='col-md-4 mt-2'>
+                                <BtnMultiFunc name={'renters'} />
+                            </div>
+                            <div className='col-md-4 mt-2'>
+                                <BtnMultiFunc name={'notifications'} />
+                            </div>
+                            <div className='col-md-4 mt-2'>
+                                <BtnMultiFunc name={'properties'} />
                             </div>
                         </div>
-                    </div >
-                </div>
+                    </div>
+                </div >
+
             </div>
 
-            <div className='row col-12 dashboard-task px-3'
-            >
-                <div className='col-md-4 dashboard-task-6'>
+            <div className='row col-12 dashboard-task' >
+                <div className='col-md-6 col-lg-4 dashboard-task-6'>
                     <div className='dashboard-task-content'>
                         <div className='dashboard-action'>
                             <div className='dashboard-action-content'>
@@ -52,7 +58,7 @@ export default function Dashboard() {
                                 </div>
 
                                 <div className='btn_area'>
-                                    <Button>
+                                    <Button onClick={() => { navigate("/calendar/calendarEventDetails") }}>
                                         <div className='btn-content' style={{ display: 'flex', alignItems: 'center' }}>
                                             <span>Add Event</span>
                                             <PlusOutlined />
@@ -65,35 +71,12 @@ export default function Dashboard() {
                             </div>
                         </div>
                         <div className='content-item'>
-                            {/* <div className='list-content'>
-                                <div className='row col-12'>
-                                    <div className='col-6'>
-                                        <div className='list-content-title'>
-                                            <p style={{ fontWeight: 'bold' }}>Baron Ryan </p>
-                                            <p>1 Main Street 2B</p>
-                                        </div>
-                                    </div>
-                                    <div className='col-6'>
-                                        <p>Lease from Jul 30, 2023</p>
-                                    </div>
-                                </div>
-                                <div className='row col-12'>
-                                    <div className='col-6'>
-                                        <div className='list-content-title'>
-                                            <p style={{ fontWeight: 'bold' }}>Baron Ryan </p>
-                                            <p>1 Main Street 2B</p>
-                                        </div>
-                                    </div>
-                                    <div className='col-6'>
-                                        <p>Lease from Jul 30, 2023</p>
-                                    </div>
-                                </div>
-                            </div> */}
+                            <Calendar />
                         </div>
                     </div>
                 </div>
 
-                <div className='col-md-4 dashboard-task-1' >
+                <div className='col-md-6 col-lg-4 dashboard-task-1' >
                     <div className='dashboard-task-content'>
                         <div className='dashboard-action'>
                             <div className='dashboard-action-content'>
@@ -116,9 +99,9 @@ export default function Dashboard() {
                         <div className='content-item'>
                             <div className='list-content'>
                                 <div className='row col-12'>
-                                    <div className='col-7'>
+                                    <div className='col-7 d-flex align-items-baseline' >
                                         <Checkbox></Checkbox>
-                                        <div className='list-content-title'>
+                                        <div className='list-content-title ml-3'>
                                             <p>Check Gutters at 1 Main St</p>
                                         </div>
                                     </div>
@@ -130,7 +113,7 @@ export default function Dashboard() {
                     </div>
                 </div>
 
-                <div className='col-md-4 dashboard-task-2'>
+                <div className='col-md-6 col-lg-4 dashboard-task-2'>
                     <div className='dashboard-task-content'>
                         <div className='dashboard-action'>
                             <div className='dashboard-action-content'>
@@ -154,7 +137,6 @@ export default function Dashboard() {
                             <div className='list-content'>
                                 <div className='row col-12'>
                                     <div className='col-6'>
-                                        <Checkbox></Checkbox>
                                         <div className='list-content-title'>
                                             <p style={{ fontWeight: 'bold' }}>Chavez Dj</p>
                                             <p>1 Main Street 2B</p>
@@ -169,7 +151,7 @@ export default function Dashboard() {
                     </div>
                 </div>
 
-                <div className='col-md-4 dashboard-task-3'>
+                <div className='col-md-6 col-lg-4 dashboard-task-3'>
                     <div className='dashboard-task-content'>
                         <div className='dashboard-action'>
                             <div className='dashboard-action-content'>
@@ -202,6 +184,8 @@ export default function Dashboard() {
                                         <p>Lease from Jul 30, 2023</p>
                                     </div>
                                 </div>
+                            </div>
+                            <div className='list-content'>
                                 <div className='row col-12'>
                                     <div className='col-6'>
                                         <div className='list-content-title'>
@@ -218,7 +202,7 @@ export default function Dashboard() {
                     </div>
                 </div>
 
-                <div className='col-md-4 dashboard-task-4'>
+                <div className='col-md-6 col-lg-4 dashboard-task-4'>
                     <div className='dashboard-task-content'>
                         <div className='dashboard-action'>
                             <div className='dashboard-action-content'>
@@ -251,7 +235,9 @@ export default function Dashboard() {
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nam cum, enim impedit, voluptate error corrupti sapiente est rem illum, quod maiores ipsam odio ducimus architecto quidem. Et, tempore exercitationem? </p>
                                     </div>
                                 </div>
+                            </div>
 
+                            <div className='list-content'>
                                 <div className='row col-12'>
                                     <div className='col-10'>
                                         <p style={{ fontWeight: 'bold' }}> 1 Main Street 1A</p>
@@ -269,7 +255,7 @@ export default function Dashboard() {
                     </div>
                 </div>
 
-                <div className='col-md-4 dashboard-task-5'>
+                <div className='col-md-6 col-lg-4 dashboard-task-5'>
                     <div className='dashboard-task-content'>
                         <div className='dashboard-action'>
                             <div className='dashboard-action-content'>

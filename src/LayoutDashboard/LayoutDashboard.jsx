@@ -52,7 +52,11 @@ export default function LayoutDashboard() {
                 getItem('Manage Plan', '/tomorrow4/child2'),
                 getItem('Re-Sync Data', '/tomorrow4/child3'),
             ]),
-        // getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
+        getItem('Calendar', '/', <i className="fa-solid fa-calendar" aria-hidden="true" />,
+            [
+                getItem('Add Event', '/calendar/calendarEventDetails'),
+                getItem('View Calendar', '/calendar'),
+            ]),
         // getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
         // getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
         // getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
@@ -81,6 +85,7 @@ export default function LayoutDashboard() {
                     theme='light'
                     collapsed={collapsed}
                     onCollapse={(value) => setCollapsed(value)}
+                    onClick={() => { setCollapsed(!collapsed) }}
                     // collapsible={true}
                     // onMouseEnter={() => setCollapsed(false)}
                     // onMouseLeave={() => setCollapsed(true)}
@@ -89,12 +94,9 @@ export default function LayoutDashboard() {
                         overflowY: 'auto',
                         backgroundClip: 'red'
                     }}
-
-
                 >
                     <div
                         className={`collapse-btn w-100 d-inline-flex align-items-center ${collapsed ? '' : 'expanded'}`}
-                        onClick={() => { setCollapsed(!collapsed) }}
                     >
                         <span className="navHeaderIconContainer text-light" id="MenuBarIcon" >
                             <i className="fa-solid fa-bars fa-xl"></i>

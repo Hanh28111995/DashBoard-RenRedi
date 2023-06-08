@@ -1,0 +1,49 @@
+.calendar-btn{
+    width: 100%;
+    background-color: rgba($color: $bg-color-gray, $alpha: 0.1);
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    button{
+        height: 50px;
+        min-width: 150px;
+    }
+
+}
+.calendar-container {
+    .fc-scroller {
+        position: unset;
+    }
+
+    .fc-button,
+    .fc-today-button {
+        background-color: transparent !important;
+        border-radius: 0.25em !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        color: $ft-color-text !important;
+        text-transform: capitalize;
+
+        .fc-icon {
+            color: gray;
+        }
+
+        &:hover {
+            color: $ft-color-1;
+
+            .fc-icon {
+                color: $ft-color-1;
+            }
+        }
+    }
+
+    .fc-button-active {
+        background-color: $bg-color-gray !important;
+    }
+
+    .fc-toolbar-chunk .fc-button-group {
+        .fc--button {
+            display: none;
+        }
+    }
+}

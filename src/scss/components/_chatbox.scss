@@ -1,70 +1,161 @@
+.chatbox_zone {
 
     .open-button {
-        background-color: #555;
+        position: fixed;
+        bottom: 23px;
+        right: 28px;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        background-color: $bg-color-1;
+        border-radius: 50%;
         color: white;
         padding: 16px 20px;
         border: none;
         cursor: pointer;
-        opacity: 0.8;
-        position: fixed;
-        bottom: 23px;
-        right: 28px;
-        width: 280px;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
     }
 
     /* The popup chat - hidden by default */
     .chat-popup {
-        display: none;
+        border-radius: 25px;
+        width: 400px;
+        height: 80vh;
+        overflow: hidden;
         position: fixed;
-        bottom: 0;
         right: 15px;
+        bottom: 75px;
         border: 3px solid #f1f1f1;
         z-index: 9;
+        transform-origin: 100% 100%;
+
+        .chat-popup-content {
+
+            ul .nav-item .nav-link.active {
+                background-color: transparent;
+
+                // p {
+                //     color: $bg-color-1;
+                // }
+
+            }
+
+            ul {
+                justify-content: space-around;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding-top: 15px;
+                margin: 0 auto;
+                padding-top: 10px;
+                background-color: $bg-color-light;
+                z-index: 5;
+
+                .nav-item {
+                    display: flex;
+                    justify-content: center;
+
+                    .nav-link {
+                        text-decoration: none;
+
+                        p {
+                            color: $ft-color-text;
+                        }
+
+                        svg {
+                            width: 2em;
+                            height: 2em;
+                        }
+                    }
+
+                    &:hover {
+                        .nav-link {
+                            p {
+                                color: $ft-color-1;
+                            }
+
+                            svg {
+                                fill: $ft-color-1 !important;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .tab-content {
+            #home {
+                .home_bg {
+                    position: relative;
+                    height: 388px;
+                    width: 400px;
+                    background-color: $bg-color-1;
+
+                    .home_bg_gradient {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        height: 140px;
+                        width: 100%;
+                        opacity: 1;
+                        z-index: 0;
+                        background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
+                    }
+                }
+
+                .home_header {
+                    padding: 35px 35px;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .img-logo {
+                        img {
+                            margin-right: auto;
+                            max-height: 32px;
+                            width: auto;
+                        }
+                    }
+
+                    .img-avatar {
+                        .img-avatar-content {
+                            display: flex;
+                            flex-direction: row;
+
+                            .ant-avatar-group {
+                                .ant-avatar {
+                                    border-color: transparent;
+                                    mask: radial-gradient(circle at -11px center, transparent 21px, white 22px);
+
+                                    &:first-child {
+                                        mask: unset;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+    }
+}
+
+
+@keyframes scaleToZero {
+    0% {
+        transform: scale(0);
     }
 
-    /* Add styles to the form container */
-    .form-container {
-        max-width: 300px;
-        padding: 10px;
-        background-color: white;
+    100% {
+        transform: scale(1);
     }
-
-    /* Full-width textarea */
-    .form-container textarea {
-        width: 100%;
-        padding: 15px;
-        margin: 5px 0 22px 0;
-        border: none;
-        background: #f1f1f1;
-        resize: none;
-        min-height: 200px;
-    }
-
-    /* When the textarea gets focus, do something */
-    .form-container textarea:focus {
-        background-color: #ddd;
-        outline: none;
-    }
-
-    /* Set a style for the submit/send button */
-    .form-container .btn {
-        background-color: #04AA6D;
-        color: white;
-        padding: 16px 20px;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        margin-bottom: 10px;
-        opacity: 0.8;
-    }
-
-    /* Add a red background color to the cancel button */
-    .form-container .cancel {
-        background-color: red;
-    }
-
-    /* Add some hover effects to buttons */
-    .form-container .btn:hover,
-    .open-button:hover {
-        opacity: 1;
-    }
+}
