@@ -109,33 +109,27 @@ export default function DataTableCurrent() {
   const columns = [{
     dataField: 'renter',
     text: 'Renter',
-    sort: true,
     headerFormatter: () => sortIconFormatter('Renter'),
   }, {
     dataField: 'address',
     text: 'Address',
-    sort: true,
     headerFormatter: () => sortIconFormatter('Address'),
   }, {
     dataField: 'unit',
     text: 'Unit',
-    sort: true,
     headerFormatter: () => sortIconFormatter('Unit'),
   },
   {
     dataField: 'rentPrice',
     text: 'Rent',
-    sort: true,
     headerFormatter: () => sortIconFormatter('Rent'),
   }, {
     dataField: 'leaseStart',
     text: 'Lease Start',
-    sort: true,
     headerFormatter: () => sortIconFormatter('Lease Start'),
   }, {
     dataField: 'leaseEnd',
     text: 'Lease End',
-    sort: true,
     headerFormatter: () => sortIconFormatter('Lease End'),
   }, {
     dataField: 'status',

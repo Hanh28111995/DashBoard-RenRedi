@@ -1,18 +1,22 @@
 .AddEventCalendar {
     width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 
     .AddEventCalendar-content {
-        padding: 70px 20px 50px 20px;
+        padding: 10%;
         box-shadow: 0 0 50px 5px rgba(50, 116, 186, .2);
         border-radius: 5px;
         background-color: $bg-color-light;
 
         .ant-form .form-btn {
             display: flex;
-            justify-content: center;
+            justify-content: start;
         }
 
         .ant-form-item {
+            margin-bottom: 0;
+
             .ant-form-item-row {
                 justify-content: center;
 
@@ -20,6 +24,52 @@
                     text-align: start !important;
                 }
             }
+        }
+    }
+
+    .ant-radio-wrapper {
+        color: initial;
+        transition: all 0.2 ease;
+
+        &::after {
+            top: 0;
+            left: 0;
+            width: 100%;
+            position: absolute;
+            background: transparent;
+            border-radius: 10px;
+            transform: scale(0,1);
+            transform-origin: left;
+            transition: all .25s ease;
+        }
+
+        .ant-radio {
+            display: block;
+
+            .ant-radio-inner {
+                border: 2px solid $bg-color-7;
+            }
+        }
+
+    }
+
+    .ant-radio-wrapper.ant-radio-wrapper-checked {
+        color: $ft-color-light;
+
+        span.ant-radio+* {
+            z-index: 2;
+        }
+
+
+        &::after {
+            background: rgba($color: #0065aa, $alpha: 1);
+            transform: scale(1, 1);
+            transform-origin: left;
+        }
+
+
+        .ant-radio.ant-radio-checked {
+            display: none;
         }
     }
 }

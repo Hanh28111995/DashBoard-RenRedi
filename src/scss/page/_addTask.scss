@@ -1,0 +1,28 @@
+.AddEventTask {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .AddEventTask-content {
+        padding: 10%;
+        box-shadow: 0 0 50px 5px rgba(50, 116, 186, .2);
+        border-radius: 5px;
+        background-color: $bg-color-light;
+
+        .ant-form .form-btn {
+            display: flex;
+            justify-content: start;
+        }
+
+        .ant-form-item {
+            margin-bottom: 0;
+            .ant-form-item-row {
+                justify-content: center;
+
+                .ant-form-item-label {
+                    text-align: start !important;
+                }
+            }
+        }
+    }
+}

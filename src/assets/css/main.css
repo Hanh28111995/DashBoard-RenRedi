@@ -809,6 +809,13 @@ input {
             transform: scale(1);
   }
 }
+.dataTable .w-column-3,
+.dataTable .w-column-2 {
+  width: 20%;
+}
+.dataTable .w-column-1 {
+  width: 50%;
+}
 .dataTable .headerStyle {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -907,9 +914,11 @@ input {
 
 .AddEventCalendar {
   width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .AddEventCalendar .AddEventCalendar-content {
-  padding: 70px 20px 50px 20px;
+  padding: 10%;
   -webkit-box-shadow: 0 0 50px 5px rgba(50, 116, 186, 0.2);
           box-shadow: 0 0 50px 5px rgba(50, 116, 186, 0.2);
   border-radius: 5px;
@@ -919,9 +928,12 @@ input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+.AddEventCalendar .AddEventCalendar-content .ant-form-item {
+  margin-bottom: 0;
 }
 .AddEventCalendar .AddEventCalendar-content .ant-form-item .ant-form-item-row {
   -webkit-box-pack: center;
@@ -930,4 +942,300 @@ input {
 }
 .AddEventCalendar .AddEventCalendar-content .ant-form-item .ant-form-item-row .ant-form-item-label {
   text-align: start !important;
+}
+.AddEventCalendar .ant-radio-wrapper {
+  color: initial;
+  -webkit-transition: all 0.2 ease;
+  transition: all 0.2 ease;
+}
+.AddEventCalendar .ant-radio-wrapper::after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  background: transparent;
+  border-radius: 10px;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.AddEventCalendar .ant-radio-wrapper .ant-radio {
+  display: block;
+}
+.AddEventCalendar .ant-radio-wrapper .ant-radio .ant-radio-inner {
+  border: 2px solid #0065aa;
+}
+.AddEventCalendar .ant-radio-wrapper.ant-radio-wrapper-checked {
+  color: #fff;
+}
+.AddEventCalendar .ant-radio-wrapper.ant-radio-wrapper-checked span.ant-radio + * {
+  z-index: 2;
+}
+.AddEventCalendar .ant-radio-wrapper.ant-radio-wrapper-checked::after {
+  background: #0065aa;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+.AddEventCalendar .ant-radio-wrapper.ant-radio-wrapper-checked .ant-radio.ant-radio-checked {
+  display: none;
+}
+
+.AddEventTask {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.AddEventTask .AddEventTask-content {
+  padding: 10%;
+  -webkit-box-shadow: 0 0 50px 5px rgba(50, 116, 186, 0.2);
+          box-shadow: 0 0 50px 5px rgba(50, 116, 186, 0.2);
+  border-radius: 5px;
+  background-color: #fff;
+}
+.AddEventTask .AddEventTask-content .ant-form .form-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+.AddEventTask .AddEventTask-content .ant-form-item {
+  margin-bottom: 0;
+}
+.AddEventTask .AddEventTask-content .ant-form-item .ant-form-item-row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.AddEventTask .AddEventTask-content .ant-form-item .ant-form-item-row .ant-form-item-label {
+  text-align: start !important;
+}
+
+.tenant-detail .row {
+  padding: 0;
+  margin: 0;
+}
+.tenant-detail .tenant-detail-col-1 {
+  width: 275px;
+  max-width: 275px;
+  padding-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 0;
+}
+.tenant-detail .tenant-detail-col-2 {
+  margin-right: 15px;
+  padding-right: 2%;
+  -webkit-box-flex: 4;
+      -ms-flex: 4 1;
+          flex: 4 1;
+}
+.tenant-detail .card {
+  overflow: hidden;
+  background: hsla(0, 0%, 100%, 0.96);
+  -webkit-box-shadow: 0 8px 16px rgba(118, 143, 255, 0.15);
+          box-shadow: 0 8px 16px rgba(118, 143, 255, 0.15);
+  border-radius: 12.5px;
+  width: 220px !important;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.tenant-detail .card .card-body {
+  padding: 1.5rem;
+}
+.tenant-detail .card .card-body .avatar-zone {
+  position: relative;
+  width: 121px;
+  height: 121px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tenant-detail .card .card-body .avatar-zone .circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #3274ba;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  opacity: 1;
+}
+.tenant-detail .card .card-body .avatar-zone .circle img {
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  width: 75px;
+  height: 75px;
+}
+.tenant-detail .card .card-body .avatar-zone .card-overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #3274ba;
+  z-index: 1;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+.tenant-detail .card .card-body .text-content-zone {
+  margin-top: 30px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  position: relative;
+  z-index: 5;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+.tenant-detail .card:hover {
+  -webkit-transform: translateY(-5px) scale(1.005) translateZ(0);
+          transform: translateY(-5px) scale(1.005) translateZ(0);
+  -webkit-box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11), 0 24px 46px rgba(50, 116, 186, 0.48);
+          box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11), 0 24px 46px rgba(50, 116, 186, 0.48);
+}
+.tenant-detail .card:hover .card-body .circle {
+  opacity: 0;
+}
+.tenant-detail .card:hover .card-body .card-overlay {
+  -webkit-transform: scale(3.3);
+          transform: scale(3.3);
+}
+.tenant-detail .card:hover .card-body .text-content-zone {
+  color: #fff;
+}
+.tenant-detail .tenant-status {
+  width: 80%;
+  padding-left: 20px;
+}
+.tenant-detail .tenant-status .sectionCardList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 21px;
+}
+.tenant-detail .tenant-status .sectionCardList .sectionCardText {
+  margin: 0 0 1em;
+  margin-bottom: 0 !important;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 200px;
+          flex: 1 1 200px;
+}
+.tenant-detail .tenant-status .sectionCardList .sectionCardText:first-child {
+  font-size: 25px;
+  font-weight: 400;
+}
+.tenant-detail .tenant-status .sectionCardList .sectionCardText:last-child {
+  font-size: 20px;
+  font-weight: 300;
+}
+.tenant-detail .text-to-viewall {
+  width: 220px;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 30px;
+  padding: 5px;
+  color: #000;
+}
+.tenant-detail .text-to-viewall:hover {
+  color: #3498db;
+}
+.tenant-detail .tab-content #details .detail-main .detail-content .content-item h4 {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.tenant-detail .tab-content #details .detail-main .detail-content .content-item h4 .anticon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 5px;
+  font-size: 20px;
+}
+.tenant-detail .tab-content #details .detail-main .detail-content .content-item .content-item-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.tenant-detail .tab-content #details .detail-main .detail-content .content-item .content-item-body .sectionCardList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 21px;
+}
+.tenant-detail .tab-content #details .detail-main .detail-content .content-item .content-item-body .sectionCardList .sectionCardText {
+  margin: 0 0 1em;
+  margin-bottom: 0 !important;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 200px;
+          flex: 1 1 200px;
+}
+.tenant-detail .tab-content #details .detail-main .detail-content .content-item .content-item-body .sectionCardList .sectionCardText:first-child {
+  font-size: 18px;
+  font-weight: 400;
+}
+.tenant-detail .tab-content #details .detail-main .detail-content .content-item .content-item-body .sectionCardList .sectionCardText:last-child {
+  font-size: 18px;
+  font-weight: 300;
+}
+.tenant-detail .nav-pills {
+  width: 100% !important;
+}
+.tenant-detail .nav-pills .nav-item {
+  padding: 0;
+}
+.tenant-detail .nav-pills .nav-item .nav-link {
+  border: 1px solid rgba(170, 170, 170, 0.5);
+}
+.tenant-detail .nav-pills .nav-item .nav-link p {
+  margin-bottom: 0;
 }

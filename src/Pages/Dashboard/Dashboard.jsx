@@ -84,7 +84,7 @@ export default function Dashboard() {
                                     <h5>Tasks</h5>
                                 </div>
                                 <div className='btn_area'>
-                                    <Button>
+                                    <Button onClick={() => { navigate("/tasks/tasksDetails") }}>
                                         <div className='btn-content' style={{ display: 'flex', alignItems: 'center' }}>
                                             <span className='dashboard_title'>Add Task</span>
                                             <PlusOutlined />

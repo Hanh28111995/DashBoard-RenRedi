@@ -10,7 +10,7 @@ export default function EventCalendar() {
             span: 3,
         },
         wrapperCol: {
-            span: 15,
+            span: 21,
         },
     }
 
@@ -18,7 +18,8 @@ export default function EventCalendar() {
     return (
            
             <div className='AddEventCalendar mx-auto'>
-                <div className='AddEventCalendar-content mt-5'>
+                <div className='AddEventCalendar-content my-5'>
+                    <h3 className='mb-3'>Add Event</h3>
                     <Form
                         style={{ maxWidth: '100%' }}
                         autoComplete='off'
@@ -49,9 +50,9 @@ export default function EventCalendar() {
                             name="allday"
                         // rules={[{ required: true, message: 'Please input your User Name!' }]}
                         >
-                            <Radio.Group>
+                            <Radio.Group defaultValue={"0"}>
                                 <Radio value="1"> All Day </Radio>
-                                <Radio value="0"> Not All Day </Radio>
+                                <Radio value="0" > Not All Day </Radio>
                             </Radio.Group>
                         </Form.Item>
 
@@ -95,7 +96,7 @@ export default function EventCalendar() {
                             name="repeat"
                         // rules={[{ required: true, message: 'Please input your User Name!' }]}
                         >
-                            <Radio.Group>
+                            <Radio.Group defaultValue={"0"}>
                                 <Radio value="1"> Repeat </Radio>
                                 <Radio value="0"> No Repeat </Radio>
                             </Radio.Group>
@@ -108,7 +109,7 @@ export default function EventCalendar() {
                             <TextArea rows={4} placeholder="Other Reason" />
                         </Form.Item>
 
-                        <div className='form-btn'>
+                        <div className='form-btn mt-3'>
                             <Form.Item>
                                 <Button className='btn add-btn' htmlType="submit">
                                     Add

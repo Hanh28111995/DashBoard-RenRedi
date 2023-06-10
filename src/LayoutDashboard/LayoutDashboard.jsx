@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Layout, Menu } from "antd";
 import Icon from "@mdi/react";
 import { mdiAccount, mdiAccountCash, mdiFileEdit, mdiClockTimeFour, mdiTicketAccount, mdiCalendarMonth, mdiAccountSupervisor, mdiAccountGroup } from "@mdi/js";
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import HeaderContent from './HeaderContent';
 import Chatbox from './Chatbox';
 const { Content, Sider } = Layout;
@@ -10,6 +10,7 @@ const { Content, Sider } = Layout;
 
 export default function LayoutDashboard() {
     const [collapsed, setCollapsed] = useState(true);
+    const navigate = useNavigate()
 
     function getItem(label, key, icon, children, type, disabled) {
         return {
@@ -29,16 +30,16 @@ export default function LayoutDashboard() {
         // getItem('Daily Task', '/admin/daily_task', <Icon path={mdiFileEdit} size={1} />),
         // getItem('Time Sheet', '/admin/timesheet', <Icon path={mdiClockTimeFour} size={1} />),
         getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
-        getItem('Help', '/tomorrow1', <i className="fa-solid fa-info " aria-hidden="true" />,
+        getItem('Help', '/sub1', <i className="fa-solid fa-info " aria-hidden="true" />,
             [
                 getItem('Live chat', '/tomorrow1/child1'),
                 getItem('Articles & Tour', '/tomorrow1/child2'),
                 getItem('Demo mode', '/tomorrow1/child3'),
                 getItem('I Want a Product Demo', '/tomorrow1/child4'),
             ]),
-        getItem('Get $50', '/tomorrow2', <i className="fa-solid fa-gift" aria-hidden="true" />,
+        getItem('Get $50', '/sub2', <i className="fa-solid fa-gift" aria-hidden="true" />,
             []),
-        getItem('Rent', '/tomorrow3', <i className="fa-solid fa-dollar-sign" aria-hidden="true" />,
+        getItem('Rent', '/sub3', <i className="fa-solid fa-dollar-sign" aria-hidden="true" />,
             [
                 getItem('View all charges', '/tomorrow3/child1'),
                 getItem('Create charge', '/tomorrow3/child2'),
@@ -46,16 +47,21 @@ export default function LayoutDashboard() {
                 getItem('Export charges', '/tomorrow3/child4'),
                 getItem('View rent roll', '/tomorrow3/child5'),
             ]),
-        getItem('Accounting', '/tomorrow4', <i className="fa-solid fa-calculator" aria-hidden="true" />,
+        getItem('Accounting', '/sub4', <i className="fa-solid fa-calculator" aria-hidden="true" />,
             [
                 getItem('Sign In/Sign Up', '/tomorrow4/child1'),
                 getItem('Manage Plan', '/tomorrow4/child2'),
                 getItem('Re-Sync Data', '/tomorrow4/child3'),
             ]),
-        getItem('Calendar', '/', <i className="fa-solid fa-calendar" aria-hidden="true" />,
+        getItem('Calendar', '/sub5', <i className="fa-solid fa-calendar-alt" aria-hidden="true" />,
             [
-                getItem('Add Event', '/calendar/calendarEventDetails'),
-                getItem('View Calendar', '/calendar'),
+                getItem('Add Event', '/calendar/calendarEventDetails', <i />),
+                getItem('View Calendar', '/calendar', <i />),
+            ]),
+        getItem('Tasks', '/sub6', <i className="fas fa-clipboard-check" aria-hidden="true" />,
+            [
+                getItem('Add task', '/tasks/tasksDetails', <i />),
+                getItem('View all task', '/tasks', <i />),
             ]),
         // getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
         // getItem('Dashboard', '', <i className="fa-solid fa-th-large" aria-hidden="true" />,),
@@ -85,7 +91,8 @@ export default function LayoutDashboard() {
                     theme='light'
                     collapsed={collapsed}
                     onCollapse={(value) => setCollapsed(value)}
-                    onClick={() => { setCollapsed(!collapsed) }}
+                    onClick={() => { setCollapsed(false) }}
+
                     // collapsible={true}
                     // onMouseEnter={() => setCollapsed(false)}
                     // onMouseLeave={() => setCollapsed(true)}
@@ -104,8 +111,10 @@ export default function LayoutDashboard() {
 
                         <div className={`logo ${collapsed ? 'd-none' : ''}`}>
                             <span className="logo-container" >
-                                <img
-                                    src="https://app.rentredi.com/img/logoWhiteNoBackground.png" id="dashboardLogo" />
+                                <a href="/dashboard">
+                                    <img
+                                        src="https://app.rentredi.com/img/logoWhiteNoBackground.png" id="dashboardLogo" />
+                                </a>
                             </span>
                         </div>
 
@@ -113,17 +122,17 @@ export default function LayoutDashboard() {
 
                     <Menu
                         mode="inline"
-                        // theme='light'
+                        forceSubMenuRender={true}
                         style={{ backgroundColor: 'transparent' }}
                         items={menuList}
-                    // onClick={({ key }) => {
-                    //     if (key === 'logOut') {
-                    //         handleLogout();
-                    //     }
-                    //     else {
-                    //         navigate(key)
-                    //     }
-                    // }}
+                        onClick={({ key }) => {
+                            // if (key === 'logOut') {
+                            //     handleLogout();
+                            // }
+                            // else {
+                            navigate(key)
+                            // }
+                        }}
                     />
                 </Sider>
                 <Layout

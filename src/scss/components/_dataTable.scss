@@ -1,4 +1,15 @@
 .dataTable {
+
+    .w-column-3,
+    .w-column-2 {
+        width: 20%;
+    }
+
+    .w-column-1 {
+        width: 50%;
+    }
+
+
     .headerStyle {
         display: flex;
         align-items: center;
